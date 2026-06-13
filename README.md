@@ -1,24 +1,69 @@
-Welcome to the NextJS base template bootstrapped using the `create-next-app`. This template supports TypeScript, but you can use normal JavaScript as well.
+### Discord Bot Landing Page
 
-## Getting Started
+A beautiful, animated landing page for the **AvalonX** Discord bot, built with Next.js 15, React 19, and TypeScript.
 
-Hit the run button to start the development server.
+## Tech Stack
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- **Framework:** Next.js 15 (Pages Router)
+- **Language:** TypeScript
+- **Styling:** CSS Variables + Inline Styles + Keyframe Animations
+- **Animations:** IntersectionObserver, Canvas Particles, CSS keyframes
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on `/api/hello`. This endpoint can be edited in `pages/api/hello.ts`.
+## Project Structure
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+├── pages/
+│   ├── index.tsx       # Main landing page
+│   ├── 404.tsx         # Custom 404 with glitch animation
+│   ├── _app.tsx        # App wrapper
+│   └── _document.tsx   # Custom <head> with favicon
+├── components/
+│   ├── Navbar.tsx      # Responsive nav + hamburger menu
+│   └── Particles.tsx   # Canvas particle background
+├── hooks/
+│   └── useInView.ts    # Scroll animation + counter hooks
+├── public/
+│   └── logo.jpg        # AvalonX bot avatar
+└── styles/
+    └── globals.css     # CSS variables + keyframes
+```
 
-## Learn More
+## Deploy Everywhere
 
-To learn more about Next.js, take a look at the following resources:
+### Vercel (recommended)
+```bash
+npx vercel --prod
+```
+Or connect the GitHub repo at vercel.com — zero config needed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Netlify
+```bash
+npm run build
+# Upload .next folder, or connect repo at netlify.com
+# netlify.toml is already configured
+```
 
-## Productionizing your Next App
+### Railway
+```bash
+# Connect repo at railway.app — railway.json is configured
+```
 
-To make your next App run smoothly in production make sure to deploy your project with [Repl Deployments](https://docs.replit.com/hosting/deployments/about-deployments)!
+### Render
+- Build Command: `npm run build`
+- Start Command: `npm run start`
+- Environment: Node
 
-You can also produce a production build by running `npm run build` and [changing the run command](https://docs.replit.com/programming-ide/configuring-repl#run) to `npm run start`.
+### VPS / Docker
+```bash
+npm install
+npm run build
+PORT=3000 npm run start
+```
+
+## Environment Variables
+
+No required variables — the app works out of the box.
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PORT` | `3000` | Server port |
